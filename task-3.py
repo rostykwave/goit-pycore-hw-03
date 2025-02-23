@@ -4,17 +4,15 @@ def normalize_phone(phone_number:str) -> str:
     # Remove all characters except numbers and the "+" sign
     phone_number = re.sub(r"[^\d+]", "", phone_number)
     
-    # If the number starts with "380", add "+"
     if phone_number.startswith("380"):
         phone_number = "+" + phone_number
     
-    # If the number does not start with "+", add "+38"
     elif not phone_number.startswith("+"):
         phone_number = "+38" + phone_number
     
     return phone_number
 
-# Приклад використання
+# Example of usage
 raw_numbers = [
     "067\t123 4567",
     "(095) 234-5678\n",
